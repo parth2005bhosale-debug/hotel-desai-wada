@@ -7,6 +7,7 @@ import Gallery from './Component/Gallery'
 import Booking from './Component/Booking'
 import Contact from './Component/Contact'
 import Footer from './Component/Footer'
+import FAQ from './Component/FAQ'
 
 
 function App() {
@@ -19,7 +20,9 @@ function App() {
       <Gallery />
       <Booking />
       <Contact />
+      <FAQ />
       <Footer />
+      
     </>
   )
 }

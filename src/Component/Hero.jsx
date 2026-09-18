@@ -1,11 +1,12 @@
+import heroImage from '../assets/Vasota.jpg'
+
 function Hero() {
   return (
     <section
       className="hero"
       id="home"
       style={{
-        backgroundImage:
-          "url('https://midurgveda.com/Admin/trek-images/vasota%203.jpg')"
+        backgroundImage: `url(${heroImage})`
       }}
     >
       <div className="hero-overlay"></div>

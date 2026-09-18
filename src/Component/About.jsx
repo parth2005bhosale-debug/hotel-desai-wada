@@ -1,13 +1,15 @@
+import Wada1 from '../assets/Wada1.jpg'
+
 function About() {
   return (
     <section className="about" id="about">
 
       <div className="about-container">
-
+    
         {/* About Image */}
         <div className="about-image">
           <img
-            src="https://gos3.ibcdn.com/c3575ba6b46b11e9a9390242ac110002.jpg"
+            src={Wada1}
             alt="Traditional Maharashtrian Wada"
           />
         </div>

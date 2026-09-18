@@ -5,7 +5,7 @@ function Hero() {
       id="home"
       style={{
         backgroundImage:
-          "url('https://media.assettype.com/outlooktraveller/2025-11-26/pn7n2wbp/sula-wada-the-legacy-8b6a6e.jpg?w=1200&auto=format%2Ccompress&fit=max&format=webp&dpr=1.0')"
+          "url('https://midurgveda.com/Admin/trek-images/vasota%203.jpg')"
       }}
     >
       <div className="hero-overlay"></div>

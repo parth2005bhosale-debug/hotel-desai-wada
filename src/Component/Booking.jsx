@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import {
-  FaPhoneAlt,
   FaWhatsapp,
+  FaPhoneAlt,
   FaEnvelope,
   FaInstagram
 } from 'react-icons/fa'
@@ -28,14 +28,14 @@ function Booking() {
     e.preventDefault()
 
     if (formData.checkOut <= formData.checkIn) {
-      alert('Check-out date must be after check-in date.')
+      alert('Check-out date must be after Check-in date.')
       return
     }
 
     const whatsappMessage = `
 Hello Hotel Desai Wada,
 
-I would like to make a booking enquiry.
+I would like to make a booking request.
 
 Name: ${formData.name}
 Phone: ${formData.phone}
@@ -43,174 +43,94 @@ Guests: ${formData.guests}
 Check-in: ${formData.checkIn}
 Check-out: ${formData.checkOut}
 Experience: ${formData.experience}
-
-Message:
-${formData.message || 'No special requirements.'}
+Message: ${formData.message}
     `
 
-    const whatsappUrl = `https://wa.me/919403884460?text=${encodeURIComponent(
+    const whatsappURL = `https://wa.me/919403884460?text=${encodeURIComponent(
       whatsappMessage
     )}`
 
-    window.open(whatsappUrl, '_blank')
+    window.open(whatsappURL, '_blank')
   }
 
   return (
     <section className="booking" id="booking">
 
-      <div className="booking-container">
+      <div className="section-heading">
+        <p className="section-subtitle">BOOK YOUR EXPERIENCE</p>
 
-        {/* Booking Information */}
-        <div className="booking-content">
+        <h2>तुमचा खास अनुभव आजच बुक करा</h2>
 
-          <p className="section-subtitle">
-            BOOK YOUR EXPERIENCE
-          </p>
+        <p>
+          तुमची माहिती भरून Booking Request पाठवा.
+          आमची टीम तुमच्याशी लवकरच संपर्क करेल.
+        </p>
 
-          <h2>
-            तुमचा खास अनुभव आजच बुक करा
-          </h2>
+        <div className="booking-highlights">
 
-          <p>
-            तुमच्या कुटुंबासोबत, मित्रमंडळींसोबत किंवा
-            ग्रुपसोबत हॉटेल देसाई वाडा येथे खास अनुभवासाठी
-            चौकशी करा.
-          </p>
+          <span>✓ आरामदायी मुक्काम</span>
 
-          <div className="booking-highlights">
+          <span>✓ स्वादिष्ट भोजन</span>
 
-            <span>✓ आरामदायी मुक्काम</span>
-            <span>✓ स्वादिष्ट भोजन</span>
-            <span>✓ साहसी उपक्रम</span>
-            <span>✓ निसर्गरम्य वातावरण</span>
+          <span>✓ साहसी उपक्रम</span>
 
-          </div>
-
-
-          {/* Direct Contact */}
-          <div className="booking-contact">
-
-            <p className="booking-contact-title">
-              थेट संपर्क
-            </p>
-
-            <div className="booking-contact-links">
-
-              {/* Call */}
-              <a href="tel:+919403884460">
-                <FaPhoneAlt />
-                <span>Call</span>
-              </a>
-
-              {/* WhatsApp */}
-              <a
-                href="https://wa.me/919403884460"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FaWhatsapp />
-                <span>WhatsApp</span>
-              </a>
-
-              {/* Email */}
-              <a href="mailto:rahulbhosale8906@gmail.com">
-                <FaEnvelope />
-                <span>Email</span>
-              </a>
-
-              {/* Instagram */}
-              <a
-                href="https://www.instagram.com/hotel_desaii_wada/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FaInstagram />
-                <span>Instagram</span>
-              </a>
-
-            </div>
-
-          </div>
+          <span>✓ निसर्गरम्य वातावरण</span>
 
         </div>
+      </div>
 
+      <div className="booking-container">
 
-        {/* Booking Form */}
-        <form
-          className="booking-form"
-          onSubmit={handleSubmit}
-        >
+        <form className="booking-form" onSubmit={handleSubmit}>
 
-          {/* Name + Phone */}
           <div className="form-row">
 
             <div className="form-group">
-
-              <label>
-                Your Name
-              </label>
+              <label>नाव</label>
 
               <input
                 type="text"
                 name="name"
-                placeholder="Enter your name"
+                placeholder="तुमचे नाव"
                 value={formData.name}
                 onChange={handleChange}
                 required
               />
-
             </div>
 
-
             <div className="form-group">
-
-              <label>
-                Phone Number
-              </label>
+              <label>मोबाईल नंबर</label>
 
               <input
                 type="tel"
                 name="phone"
-                placeholder="Enter 10 digit number"
+                placeholder="मोबाईल नंबर"
                 value={formData.phone}
                 onChange={handleChange}
-                pattern="[0-9]{10}"
-                maxLength="10"
                 required
               />
-
             </div>
 
           </div>
 
-
-          {/* Guests + Experience */}
           <div className="form-row">
 
             <div className="form-group">
-
-              <label>
-                Number of Guests
-              </label>
+              <label>एकूण पाहुणे</label>
 
               <input
                 type="number"
                 name="guests"
-                placeholder="Number of guests"
+                placeholder="उदा. 4"
                 min="1"
                 value={formData.guests}
                 onChange={handleChange}
                 required
               />
-
             </div>
 
-
             <div className="form-group">
-
-              <label>
-                Experience
-              </label>
+              <label>Experience</label>
 
               <select
                 name="experience"
@@ -218,42 +138,27 @@ ${formData.message || 'No special requirements.'}
                 onChange={handleChange}
                 required
               >
-
-                <option value="">
+                <option value="" hidden>
                   Select Experience
                 </option>
 
-                <option value="Stay">
-                  Stay
+                <option value="Stay & Boating">
+                  Stay & Boating
                 </option>
 
-                <option value="Package">
-                  Package
+                <option value="Vasota Trekking">
+                  Vasota Trekking
                 </option>
-
-                <option value="Adventure">
-                  Adventure
-                </option>
-
-                <option value="Group Booking">
-                  Group Booking
-                </option>
-
               </select>
 
             </div>
 
           </div>
 
-
-          {/* Dates */}
           <div className="form-row">
 
             <div className="form-group">
-
-              <label>
-                Check-in Date
-              </label>
+              <label>Check-in</label>
 
               <input
                 type="date"
@@ -262,15 +167,10 @@ ${formData.message || 'No special requirements.'}
                 onChange={handleChange}
                 required
               />
-
             </div>
 
-
             <div className="form-group">
-
-              <label>
-                Check-out Date
-              </label>
+              <label>Check-out</label>
 
               <input
                 type="date"
@@ -279,46 +179,82 @@ ${formData.message || 'No special requirements.'}
                 onChange={handleChange}
                 required
               />
-
             </div>
 
           </div>
 
-
-          {/* Message */}
           <div className="form-group">
-
-            <label>
-              Message
-            </label>
+            <label>अधिक माहिती</label>
 
             <textarea
               name="message"
-              rows="4"
-              placeholder="Any special requirements?"
+              rows="5"
+              placeholder="तुमच्या आवश्यकतेबद्दल माहिती द्या..."
               value={formData.message}
               onChange={handleChange}
             ></textarea>
-
           </div>
 
-
-          {/* Submit */}
           <button
             type="submit"
             className="booking-btn"
           >
             <FaWhatsapp />
-            Send Booking Request on WhatsApp
+            Send Booking Request
           </button>
 
+        </form>
 
-          <p className="booking-note">
-            तुमची booking request WhatsApp वर पाठवली जाईल.
-            Booking confirmation साठी Hotel शी संपर्क साधा.
+        <div className="booking-contact">
+
+          <h3>थेट संपर्क करा</h3>
+
+          <p>
+            Booking किंवा अधिक माहितीसाठी
+            खालीलपैकी कोणत्याही माध्यमातून संपर्क करा.
           </p>
 
-        </form>
+          <div className="contact-buttons">
+
+            <a
+              href="tel:+919403884460"
+              className="contact-btn"
+            >
+              <FaPhoneAlt />
+              Call Us
+            </a>
+
+            <a
+              href="https://wa.me/919403884460"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="contact-btn"
+            >
+              <FaWhatsapp />
+              WhatsApp
+            </a>
+
+            <a
+              href="mailto:rahulbhosale8906@gmail.com"
+              className="contact-btn"
+            >
+              <FaEnvelope />
+              Email
+            </a>
+
+            <a
+              href="https://www.instagram.com/hotel_desaii_wada/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="contact-btn"
+            >
+              <FaInstagram />
+              Instagram
+            </a>
+
+          </div>
+
+        </div>
 
       </div>
 

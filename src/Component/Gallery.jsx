@@ -1,3 +1,16 @@
+import Wada1 from '../assets/Wada1.jpg'
+import Wada from '../assets/Wada.jpeg'
+import BoatRide from '../assets/Boat Ride.jpg'
+import FamilyBoating from '../assets/family Boating.jpg'
+import Family from '../assets/Family.jpg'
+import Fish from '../assets/Fish.jpg'
+import GroupTea from '../assets/Group Tea.jpg'
+import NonVegThali from '../assets/Non-Veg Thali.jpg'
+import Room from '../assets/Room.jpg'
+import Starter from '../assets/Starter.jpg'
+import VegThali from '../assets/Veg Thali 1.jpg'
+import BangdaFry from '../assets/Bangda Fry.jpg'
+
 function Gallery() {
   return (
     <section className="gallery" id="gallery">
@@ -22,48 +35,96 @@ function Gallery() {
         {/* Hotel */}
         <div className="gallery-item">
           <img
-            src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=900&q=85"
-            alt="Hotel"
+            src={Wada1}
+            alt="Hotel Desai Wada"
           />
         </div>
 
-        {/* Nature */}
+        {/* Tea */}
         <div className="gallery-item">
           <img
-            src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=900&q=85"
-            alt="Nature"
+            src={GroupTea}
+            alt="Group Tea"
           />
         </div>
 
-        {/* Adventure */}
+        {/* Boating */}
         <div className="gallery-item">
           <img
-            src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=900&q=85"
-            alt="Adventure"
-          />
-        </div>
-
-        {/* Food */}
-        <div className="gallery-item">
-          <img
-            src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=900&q=85"
-            alt="Food"
+            src={BoatRide}
+            alt="Boat Ride"
           />
         </div>
 
         {/* Stay */}
         <div className="gallery-item">
           <img
-            src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=900&q=85"
-            alt="Stay"
+            src={Room}
+            alt="Hotel Room"
+          />
+        </div>
+
+        {/* Food */}
+        <div className="gallery-item">
+          <img
+            src={BangdaFry}
+            alt="Bangda Fry"
           />
         </div>
 
         {/* Memories */}
         <div className="gallery-item">
           <img
-            src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=900&q=85"
-            alt="Customer Memories"
+            src={Family}
+            alt="Family Memories"
+          />
+        </div>
+
+        {/* Wada */}
+        <div className="gallery-item">
+          <img
+            src={Wada}
+            alt="Traditional Wada"
+          />
+        </div>
+
+        {/* Fish */}
+        <div className="gallery-item">
+          <img
+            src={Fish}
+            alt="Fish Food"
+          />
+        </div>
+
+        {/* Family Boating */}
+        <div className="gallery-item">
+          <img
+            src={FamilyBoating}
+            alt="Family Boating"
+          />
+        </div>
+
+        {/* Starter */}
+        <div className="gallery-item">
+          <img
+            src={Starter}
+            alt="Food Starter"
+          />
+        </div>
+
+        {/* Non-Veg Food */}
+        <div className="gallery-item">
+          <img
+            src={NonVegThali}
+            alt="Non-Veg Thali"
+          />
+        </div>
+
+        {/* Veg Food */}
+        <div className="gallery-item">
+          <img
+            src={VegThali}
+            alt="Veg Thali"
           />
         </div>
 
